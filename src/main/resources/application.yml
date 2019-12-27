@@ -11,3 +11,13 @@ server:
 #    username: root
 #    password: test
 
+#swagger 启用
+swagger:
+  enable: true
+  basePackage: com.eyesfree.weibo
+  info:
+    title: API文档
+    description: API文档
+    version: 1.0
+    serviceUrl: http://zzfx.hoptest.haier.net
+

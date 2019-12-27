@@ -31,3 +31,26 @@
        <version>2.1</version>
      </dependency>
    生成代码具体见类：MyBatisPlusGenerator
+   
+5、swaggerui支持
+   参考文档地址：https://www.jianshu.com/p/a0caf58b3653
+   pom依赖中添加：
+     <dependency>
+       <groupId>io.springfox</groupId>
+       <artifactId>springfox-swagger2</artifactId>
+       <version>${swagger.version}</version>
+     </dependency>
+     <dependency>
+       <groupId>io.springfox</groupId>
+       <artifactId>springfox-swagger-ui</artifactId>
+       <version>${swagger.version}</version>
+     </dependency>
+   添加swagger配置文件：
+     swagger:
+       enable: true
+       basePackage: com.eyesfree.weibo
+       info:
+         title: API文档
+         description: API文档
+         version: 1.0
+         serviceUrl: http://zzfx.hoptest.haier.net
