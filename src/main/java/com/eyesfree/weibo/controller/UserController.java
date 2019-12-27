@@ -7,15 +7,15 @@ import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
- * 微博主表 前端控制器
+ * 微博注册用户表 前端控制器
  * </p>
  *
  * @author eyesfree
  * @since 2019-12-27
  */
 @RestController
-@RequestMapping("/weibo")
-public class WeiboController {
+@RequestMapping("/user")
+public class UserController {
 
 }
 

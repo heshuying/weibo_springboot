@@ -16,3 +16,18 @@
 3、增加mybatis-plug支持
    参考文章地址：https://mp.baomidou.com/guide/quick-start.html#%E5%BC%80%E5%A7%8B%E4%BD%BF%E7%94%A8
    示例源码git地址：https://github.com/baomidou/mybatis-plus-samples
+   
+4、mybatis-plug表结构对应代码生成
+   参考文章地址：https://mp.baomidou.com/guide/generator.html#%E6%B7%BB%E5%8A%A0%E4%BE%9D%E8%B5%96
+   pom依赖中添加：
+     <dependency>
+       <groupId>com.baomidou</groupId>
+       <artifactId>mybatis-plus-generator</artifactId>
+       <version>3.3.0</version>
+     </dependency>
+     <dependency>
+       <groupId>org.apache.velocity</groupId>
+       <artifactId>velocity-engine-core</artifactId>
+       <version>2.1</version>
+     </dependency>
+   生成代码具体见类：MyBatisPlusGenerator
