@@ -1,6 +1,7 @@
 package com.eyesfree.weibo.controller;
 
 
+import com.eyesfree.weibo.base.R;
 import com.eyesfree.weibo.entity.User;
 import com.eyesfree.weibo.service.UserService;
 import io.swagger.annotations.Api;
@@ -29,8 +30,9 @@ public class UserController {
 
     @ApiOperation("测试接口")
     @RequestMapping("/hello")
-    public List<User> testApi(){
-        return userService.list();
+    public R testApi(){
+        List<User> list = userService.list();
+        return R.ok().put("data", list);
     }
 
 }
