@@ -31,7 +31,7 @@ public class UserController {
     @ApiOperation("测试接口")
     @RequestMapping("/hello")
     public R testApi(){
-        List<User> list = userService.list();
+        List<User> list = userService.getUserList();
         return R.ok().put("data", list);
     }
 

@@ -2,6 +2,9 @@ package com.eyesfree.weibo.mapper;
 
 import com.eyesfree.weibo.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * <p>
@@ -9,8 +12,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * </p>
  *
  * @author eyesfree
- * @since 2019-12-27
+ * @since 2020-03-10
  */
+@Mapper
 public interface UserMapper extends BaseMapper<User> {
-
+    List<User> getUserList();
 }

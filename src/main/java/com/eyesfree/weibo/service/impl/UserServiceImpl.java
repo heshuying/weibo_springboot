@@ -4,7 +4,10 @@ import com.eyesfree.weibo.entity.User;
 import com.eyesfree.weibo.mapper.UserMapper;
 import com.eyesfree.weibo.service.UserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,5 +19,11 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements UserService {
+    @Autowired
+    UserMapper userMapper;
 
+    @Override
+    public List<User> getUserList(){
+        return userMapper.getUserList();
+    }
 }
