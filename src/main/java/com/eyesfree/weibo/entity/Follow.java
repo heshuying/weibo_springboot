@@ -3,6 +3,7 @@ package com.eyesfree.weibo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2019-12-27
+ * @since 2020-03-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -31,12 +32,12 @@ public class Follow extends Model<Follow> {
     /**
      * 被关注用户id
      */
-    private Integer userIdFollow;
+    private Integer userIdFollower;
 
     /**
      * 关注时间
      */
-    private Integer followTime;
+    private LocalDateTime followTime;
 
     /**
      * 备注名称

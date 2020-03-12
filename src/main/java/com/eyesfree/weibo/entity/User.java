@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2019-12-27
+ * @since 2020-03-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -70,7 +70,7 @@ public class User extends Model<User> {
     /**
      * 注册时间
      */
-    private Integer registTime;
+    private LocalDateTime registTime;
 
     /**
      * 登录次数
@@ -96,6 +96,16 @@ public class User extends Model<User> {
      * 个人介绍
      */
     private String introduction;
+
+    /**
+     * 关注人数
+     */
+    private Integer followCount;
+
+    /**
+     * 关注自己的人数
+     */
+    private Integer followerCount;
 
 
     @Override
