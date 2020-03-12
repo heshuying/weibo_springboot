@@ -3,6 +3,7 @@ package com.eyesfree.weibo.mapper;
 import com.eyesfree.weibo.beans.FollowResponseBean;
 import com.eyesfree.weibo.entity.Follow;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 import java.util.Map;
@@ -15,6 +16,7 @@ import java.util.Map;
  * @author eyesfree
  * @since 2019-12-27
  */
+@Mapper
 public interface FollowMapper extends BaseMapper<Follow> {
     /**
      * 获取关注列表
