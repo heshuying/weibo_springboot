@@ -20,8 +20,9 @@
         <result column="account_status" property="accountStatus" />
         <result column="introduction" property="introduction" />
         <result column="follow_count" property="followCount" />
-        <result column="follower_count" property="followerCount" />
+        <result column="fans_count" property="fansCount" />
     </resultMap>
+
 
     <select id="getUserList" resultMap="BaseResultMap">
         SELECT * FROM USER;

@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2020-03-10
+ * @since 2020-03-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -103,9 +103,9 @@ public class User extends Model<User> {
     private Integer followCount;
 
     /**
-     * 关注自己的人数
+     * 粉丝人数
      */
-    private Integer followerCount;
+    private Integer fansCount;
 
 
     @Override

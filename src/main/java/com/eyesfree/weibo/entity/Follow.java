@@ -15,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2020-03-10
+ * @since 2020-03-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -32,7 +32,7 @@ public class Follow extends Model<Follow> {
     /**
      * 被关注用户id
      */
-    private Integer userIdFollower;
+    private Integer userIdFollow;
 
     /**
      * 关注时间

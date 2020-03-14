@@ -1,6 +1,7 @@
 package com.eyesfree.weibo.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -12,7 +13,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2019-12-27
+ * @since 2020-03-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -38,7 +39,7 @@ public class WeiboComment extends Model<WeiboComment> {
     /**
      * 评论时间
      */
-    private Integer commentTime;
+    private LocalDateTime commentTime;
 
 
     @Override

@@ -3,6 +3,7 @@ package com.eyesfree.weibo.entity;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
+import java.time.LocalDateTime;
 import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -14,7 +15,7 @@ import lombok.experimental.Accessors;
  * </p>
  *
  * @author eyesfree
- * @since 2019-12-27
+ * @since 2020-03-14
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
@@ -39,7 +40,7 @@ public class Weibo extends Model<Weibo> {
     /**
      * 发布时间
      */
-    private Integer publishTime;
+    private LocalDateTime publishTime;
 
     /**
      * 评论次数

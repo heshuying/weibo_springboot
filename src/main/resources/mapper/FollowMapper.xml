@@ -5,7 +5,7 @@
     <resultMap id="BaseResultMap" type="com.eyesfree.weibo.entity.Follow">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
-        <result column="user_id_follower" property="userIdFollower" />
+        <result column="user_id_follow" property="userIdFollow" />
         <result column="follow_time" property="followTime" />
         <result column="remark_name" property="remarkName" />
     </resultMap>
