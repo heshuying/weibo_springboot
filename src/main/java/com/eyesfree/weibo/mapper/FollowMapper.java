@@ -1,5 +1,6 @@
 package com.eyesfree.weibo.mapper;
 
+import com.eyesfree.weibo.beans.FansResponseBean;
 import com.eyesfree.weibo.beans.FollowResponseBean;
 import com.eyesfree.weibo.entity.Follow;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
@@ -24,4 +25,11 @@ public interface FollowMapper extends BaseMapper<Follow> {
      * @return
      */
     List<FollowResponseBean> getFollowList(Map<String,Object> map);
+
+    /**
+     * 获取粉丝列表
+     * @param map
+     * @return
+     */
+    List<FansResponseBean> getFansList(Map<String,Object> map);
 }

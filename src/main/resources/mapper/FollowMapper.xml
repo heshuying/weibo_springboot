@@ -8,6 +8,7 @@
         <result column="user_id_follow" property="userIdFollow" />
         <result column="follow_time" property="followTime" />
         <result column="remark_name" property="remarkName" />
+        <result column="status" property="status" />
     </resultMap>
     <select id="getFollowList" parameterType="map" resultType="com.eyesfree.weibo.beans.FollowResponseBean">
         SELECT
@@ -15,14 +16,31 @@
           u.`user_name` AS userName,
           u.`true_name` AS trueName,
           u.`introduction`,
-          u.`follower_count` AS followerCount,
+          u.`fans_count` AS fansCount,
           u.`follow_count` AS followCount,
           u.`portrait_url` AS portraitUrl,
           u.sex
         FROM
           follow f
           JOIN USER u
-            ON f.`user_id_follower` = u.id
-        WHERE f.`user_id` = #{userId}
+            ON f.`user_id_follow` = u.id
+        WHERE f.`user_id` = #{userId} and f.status = 0
+    </select>
+
+    <select id="getFansList" parameterType="map" resultType="com.eyesfree.weibo.beans.FansResponseBean">
+        SELECT
+          u.id AS userId,
+          u.`user_name` AS userName,
+          u.`true_name` AS trueName,
+          u.`introduction`,
+          u.`fans_count` AS fansCount,
+          u.`follow_count` AS followCount,
+          u.`portrait_url` AS portraitUrl,
+          u.sex
+        FROM
+          follow f
+          JOIN USER u
+            ON f.`user_id` = u.id
+        WHERE f.`user_id_follow` = #{userId} and f.status = 0
     </select>
 </mapper>

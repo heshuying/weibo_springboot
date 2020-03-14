@@ -7,7 +7,7 @@ import lombok.Data;
  * 关注列表Bean对象
  */
 @Data
-public class FollowResponseBean {
+public class FansResponseBean {
     private String userId;
     private String userName;
     private String trueName;
