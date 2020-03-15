@@ -20,15 +20,17 @@ CREATE TABLE `follow` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `user_id_follow` int(11) DEFAULT NULL COMMENT '被关注用户id',
+  `status` tinyint(4) DEFAULT '0' COMMENT '状态：0 关注 1 已取消',
   `follow_time` datetime DEFAULT NULL COMMENT '关注时间',
   `remark_name` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '备注名称',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='关注表';
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='关注表';
 
 /*Data for the table `follow` */
 
-insert  into `follow`(`id`,`user_id`,`user_id_follow`,`follow_time`,`remark_name`) values (1,1,2,'2020-03-10 17:20:56',NULL);
-insert  into `follow`(`id`,`user_id`,`user_id_follow`,`follow_time`,`remark_name`) values (2,1,3,'2020-03-10 17:21:00',NULL);
+insert  into `follow`(`id`,`user_id`,`user_id_follow`,`status`,`follow_time`,`remark_name`) values (1,1,2,0,'2020-03-10 17:20:56',NULL);
+insert  into `follow`(`id`,`user_id`,`user_id_follow`,`status`,`follow_time`,`remark_name`) values (2,1,3,0,'2020-03-10 17:21:00',NULL);
+insert  into `follow`(`id`,`user_id`,`user_id_follow`,`status`,`follow_time`,`remark_name`) values (3,1,4,0,'2020-03-14 09:50:38',NULL);
 
 /*Table structure for table `user` */
 
@@ -51,13 +53,14 @@ CREATE TABLE `user` (
   `follow_count` int(11) DEFAULT '0' COMMENT '关注人数',
   `fans_count` int(11) DEFAULT '0' COMMENT '粉丝人数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博注册用户表';
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博注册用户表';
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (1,'eyesfree','eyesfree',NULL,'15610026960',0,'何树营','370222198804031210','2020-03-10 17:17:50',NULL,0,'2020-03-10 17:17:50','eyesfree@yeah.net',0,'',0,0);
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (2,'laowang','laowang',NULL,NULL,0,'老王',NULL,NULL,NULL,0,NULL,NULL,0,'',0,0);
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (3,'laozhang','laozhang',NULL,NULL,0,'老张',NULL,NULL,NULL,0,NULL,NULL,0,'',0,0);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (1,'eyesfree','eyesfree',NULL,'15610026960',0,'何树营','370222198804031210','2020-03-08 17:17:50','2020-03-12 17:30:24',0,'2020-03-08 17:17:50','eyesfree@yeah.net',0,'',3,0);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (2,'laowang','laowang',NULL,NULL,0,'老王',NULL,NULL,'2020-03-14 17:30:29',0,NULL,NULL,0,'',0,1);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (3,'laozhang','laozhang',NULL,NULL,0,'老张',NULL,NULL,'2020-03-14 17:30:32',0,NULL,NULL,0,'',0,1);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (4,'laoli','laoli',NULL,NULL,0,'老李',NULL,NULL,'2020-03-12 17:30:34',0,NULL,NULL,0,'',0,1);
 
 /*Table structure for table `weibo` */
 

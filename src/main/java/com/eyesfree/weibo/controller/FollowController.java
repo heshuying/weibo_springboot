@@ -7,6 +7,7 @@ import com.eyesfree.weibo.beans.FansResponseBean;
 import com.eyesfree.weibo.beans.FollowResponseBean;
 import com.eyesfree.weibo.entity.Follow;
 import com.eyesfree.weibo.service.FollowService;
+import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -22,6 +23,7 @@ import java.util.Map;
  * @author eyesfree
  * @since 2019-12-27
  */
+@Api(value = "关注关系相关接口", tags = "关注关系相关接口")
 @RestController
 @RequestMapping("/follow")
 public class FollowController {
