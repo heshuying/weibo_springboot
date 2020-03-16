@@ -2,8 +2,8 @@ package com.eyesfree.weibo.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.eyesfree.weibo.beans.FansResponseBean;
-import com.eyesfree.weibo.beans.FollowResponseBean;
+import com.eyesfree.weibo.beans.FansResBean;
+import com.eyesfree.weibo.beans.FollowResBean;
 import com.eyesfree.weibo.entity.Follow;
 import com.eyesfree.weibo.entity.User;
 import com.eyesfree.weibo.mapper.FollowMapper;
@@ -13,7 +13,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +38,7 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow> impleme
      * @return
      */
     @Override
-    public List<FollowResponseBean> getFollowList(String userId){
+    public List<FollowResBean> getFollowList(String userId){
         Map<String, Object> map = new HashMap<>();
         map.put("userId", userId);
         return followMapper.getFollowList(map);
@@ -51,7 +50,7 @@ public class FollowServiceImpl extends ServiceImpl<FollowMapper, Follow> impleme
      * @return
      */
     @Override
-    public List<FansResponseBean> getFansList(String userId){
+    public List<FansResBean> getFansList(String userId){
         Map<String, Object> map = new HashMap<>();
         map.put("userId", userId);
         return followMapper.getFansList(map);

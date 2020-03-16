@@ -10,7 +10,7 @@
         <result column="remark_name" property="remarkName" />
         <result column="status" property="status" />
     </resultMap>
-    <select id="getFollowList" parameterType="map" resultType="com.eyesfree.weibo.beans.FollowResponseBean">
+    <select id="getFollowList" parameterType="map" resultType="com.eyesfree.weibo.beans.FollowResBean">
         SELECT
           u.id AS userId,
           u.`user_name` AS userName,
@@ -27,7 +27,7 @@
         WHERE f.`user_id` = #{userId} and f.status = 0
     </select>
 
-    <select id="getFansList" parameterType="map" resultType="com.eyesfree.weibo.beans.FansResponseBean">
+    <select id="getFansList" parameterType="map" resultType="com.eyesfree.weibo.beans.FansResBean">
         SELECT
           u.id AS userId,
           u.`user_name` AS userName,

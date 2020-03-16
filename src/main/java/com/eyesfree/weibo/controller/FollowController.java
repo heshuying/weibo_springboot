@@ -3,8 +3,8 @@ package com.eyesfree.weibo.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.eyesfree.weibo.base.R;
-import com.eyesfree.weibo.beans.FansResponseBean;
-import com.eyesfree.weibo.beans.FollowResponseBean;
+import com.eyesfree.weibo.beans.FansResBean;
+import com.eyesfree.weibo.beans.FollowResBean;
 import com.eyesfree.weibo.entity.Follow;
 import com.eyesfree.weibo.service.FollowService;
 import io.swagger.annotations.Api;
@@ -34,14 +34,14 @@ public class FollowController {
     @ApiOperation("关注列表")
     @GetMapping ("/followList/{userId}")
     public R followList(@PathVariable String userId){
-        List<FollowResponseBean> list = followService.getFollowList(userId);
+        List<FollowResBean> list = followService.getFollowList(userId);
         return R.ok().put("data", list);
     }
 
     @ApiOperation("粉丝列表")
     @GetMapping ("/fansList/{userId}")
     public R fansList(@PathVariable String userId){
-        List<FansResponseBean> list = followService.getFansList(userId);
+        List<FansResBean> list = followService.getFansList(userId);
         return R.ok().put("data", list);
     }
 

@@ -1,7 +1,9 @@
 package com.eyesfree.weibo.service;
 
+import com.eyesfree.weibo.beans.WeiboPublishReqBean;
 import com.eyesfree.weibo.entity.Weibo;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -13,4 +15,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface WeiboService extends IService<Weibo> {
 
+    @Transactional
+    void saveWeibo(WeiboPublishReqBean reqBean);
 }
