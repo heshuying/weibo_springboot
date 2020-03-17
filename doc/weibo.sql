@@ -52,15 +52,16 @@ CREATE TABLE `user` (
   `introduction` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '个人介绍',
   `follow_count` int(11) DEFAULT '0' COMMENT '关注人数',
   `fans_count` int(11) DEFAULT '0' COMMENT '粉丝人数',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博注册用户表';
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (1,'eyesfree','eyesfree',NULL,'15610026960',0,'何树营','370222198804031210','2020-03-08 17:17:50','2020-03-12 17:30:24',0,'2020-03-08 17:17:50','eyesfree@yeah.net',0,'',3,0);
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (2,'laowang','laowang',NULL,NULL,0,'老王',NULL,NULL,'2020-03-14 17:30:29',0,NULL,NULL,0,'',0,1);
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (3,'laozhang','laozhang',NULL,NULL,0,'老张',NULL,NULL,'2020-03-14 17:30:32',0,NULL,NULL,0,'',0,1);
-insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`) values (4,'laoli','laoli',NULL,NULL,0,'老李',NULL,NULL,'2020-03-12 17:30:34',0,NULL,NULL,0,'',0,1);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`,`update_time`) values (1,'eyesfree','eyesfree',NULL,'15610026960',0,'何树营','370222198804031210','2020-03-08 17:17:50','2020-03-12 17:30:24',0,'2020-03-08 17:17:50','eyesfree@yeah.net',0,'',3,0,NULL);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`,`update_time`) values (2,'laowang','laowang',NULL,NULL,0,'老王',NULL,NULL,'2020-03-14 17:30:29',0,NULL,NULL,0,'',0,1,NULL);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`,`update_time`) values (3,'laozhang','laozhang',NULL,NULL,0,'老张',NULL,NULL,'2020-03-14 17:30:32',0,NULL,NULL,0,'',0,1,NULL);
+insert  into `user`(`id`,`user_name`,`password`,`portrait_url`,`phone_num`,`sex`,`true_name`,`idcard`,`birthday`,`regist_time`,`login_times`,`last_login`,`mail`,`account_status`,`introduction`,`follow_count`,`fans_count`,`update_time`) values (4,'laoli','laoli',NULL,NULL,0,'老李',NULL,NULL,'2020-03-12 17:30:34',0,NULL,NULL,0,'',0,1,NULL);
 
 /*Table structure for table `weibo` */
 
@@ -69,39 +70,48 @@ CREATE TABLE `weibo` (
   `user_id` int(11) NOT NULL COMMENT '关联user表id',
   `content` varchar(500) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT '' COMMENT '微博文字内容',
   `publish_time` datetime DEFAULT NULL COMMENT '发布时间',
+  `update_time` datetime DEFAULT NULL COMMENT '更新时间',
   `comment_count` int(11) DEFAULT '0' COMMENT '评论次数',
   `like_count` int(11) DEFAULT '0' COMMENT '点赞次数',
   `share_count` int(11) DEFAULT '0' COMMENT '转发次数',
   `read_count` int(11) DEFAULT '0' COMMENT '阅读次数',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博主表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博主表';
 
 /*Data for the table `weibo` */
+
+insert  into `weibo`(`id`,`user_id`,`content`,`publish_time`,`update_time`,`comment_count`,`like_count`,`share_count`,`read_count`) values (1,1,'发表了第一条微博','2020-03-16 09:41:52','2020-03-17 07:40:58',3,1,0,0);
 
 /*Table structure for table `weibo_comment` */
 
 CREATE TABLE `weibo_comment` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `weibo_id` int(11) NOT NULL,
   `user_id` int(11) DEFAULT NULL COMMENT '评论人id',
   `content` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '评论内容',
   `comment_time` timestamp NULL DEFAULT NULL COMMENT '评论时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博评论表';
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博评论表';
 
 /*Data for the table `weibo_comment` */
+
+insert  into `weibo_comment`(`id`,`weibo_id`,`user_id`,`content`,`comment_time`) values (6,1,2,'太精彩了！','2020-03-17 07:25:48');
+insert  into `weibo_comment`(`id`,`weibo_id`,`user_id`,`content`,`comment_time`) values (7,1,2,'太精彩了！','2020-03-17 07:39:44');
+insert  into `weibo_comment`(`id`,`weibo_id`,`user_id`,`content`,`comment_time`) values (8,1,2,'太精彩了！','2020-03-17 07:40:58');
 
 /*Table structure for table `weibo_like` */
 
 CREATE TABLE `weibo_like` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `weibo_id` int(11) NOT NULL COMMENT '微博表id',
   `user_id` int(11) NOT NULL COMMENT '点赞的用户id',
   `like_time` timestamp NULL DEFAULT NULL COMMENT '点赞时间',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博点赞表';
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='微博点赞表';
 
 /*Data for the table `weibo_like` */
+
+insert  into `weibo_like`(`id`,`weibo_id`,`user_id`,`like_time`) values (1,1,2,'2020-03-17 06:01:45');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
