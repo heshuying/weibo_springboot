@@ -2,6 +2,7 @@ package com.eyesfree.weibo.service;
 
 import com.eyesfree.weibo.entity.WeiboComment;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface WeiboCommentService extends IService<WeiboComment> {
 
+    void saveWeiboComment(WeiboComment reqBean);
 }
