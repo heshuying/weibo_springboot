@@ -5,6 +5,8 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.time.LocalDateTime;
 import java.io.Serializable;
+import java.util.Date;
+
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.experimental.Accessors;
@@ -106,6 +108,8 @@ public class User extends Model<User> {
      * 粉丝人数
      */
     private Integer fansCount;
+
+    private Date updateTime;
 
 
     @Override

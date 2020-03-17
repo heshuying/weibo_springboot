@@ -21,6 +21,7 @@
         <result column="introduction" property="introduction" />
         <result column="follow_count" property="followCount" />
         <result column="fans_count" property="fansCount" />
+        <result column="update_time" property="updateTime" />
     </resultMap>
 
 

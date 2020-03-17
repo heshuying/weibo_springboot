@@ -44,6 +44,8 @@ public class Weibo extends Model<Weibo> {
      */
     private Date publishTime;
 
+    private Date updateTime;
+
     /**
      * 评论次数
      */
