@@ -54,3 +54,17 @@
          description: API文档
          version: 1.0
          serviceUrl: http://zzfx.hoptest.haier.net
+
+6、整合ali数据源
+   pom中添加依赖：
+       <dependency>
+         <groupId>com.alibaba</groupId>
+         <artifactId>druid-spring-boot-starter</artifactId>
+         <version>${druid.version}</version>
+       </dependency>
+   配置文件中配置数据源、数据库连接信息
+   
+7、整合logback日志
+   配置文件中添加日志文件地址配置
+       logging:
+         config: classpath:log/log-config-dev.xml
