@@ -18,6 +18,7 @@
     <maven.compiler.target>8</maven.compiler.target>
     <swagger.version>2.7.0</swagger.version>
     <druid.version>1.1.16</druid.version>
+    <joda-time.version>2.10.3</joda-time.version>
   </properties>
 
   <parent>
@@ -83,6 +84,11 @@
       <groupId>com.alibaba</groupId>
       <artifactId>druid-spring-boot-starter</artifactId>
       <version>${druid.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${joda-time.version}</version>
     </dependency>
     <dependency>
       <groupId>junit</groupId>
