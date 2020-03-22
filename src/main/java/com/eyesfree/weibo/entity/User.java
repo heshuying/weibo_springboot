@@ -39,6 +39,8 @@ public class User extends Model<User> {
      */
     private String password;
 
+    private String salt;
+
     /**
      * 头像地址
      */
@@ -52,7 +54,7 @@ public class User extends Model<User> {
     /**
      * 性别：0 男，1 女
      */
-    private Boolean sex;
+    private Short sex;
 
     /**
      * 真实姓名
@@ -67,12 +69,12 @@ public class User extends Model<User> {
     /**
      * 出生日期
      */
-    private LocalDateTime birthday;
+    private Date birthday;
 
     /**
      * 注册时间
      */
-    private LocalDateTime registTime;
+    private Date registTime;
 
     /**
      * 登录次数
@@ -82,7 +84,7 @@ public class User extends Model<User> {
     /**
      * 上次登录时间
      */
-    private LocalDateTime lastLogin;
+    private Date lastLogin;
 
     /**
      * 邮箱

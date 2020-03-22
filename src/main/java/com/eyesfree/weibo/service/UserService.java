@@ -1,5 +1,6 @@
 package com.eyesfree.weibo.service;
 
+import com.eyesfree.weibo.beans.RegistReqBean;
 import com.eyesfree.weibo.entity.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -16,4 +17,6 @@ import java.util.List;
 public interface UserService extends IService<User> {
 
     List<User> getUserList();
+
+    void regist(RegistReqBean registReqBean);
 }

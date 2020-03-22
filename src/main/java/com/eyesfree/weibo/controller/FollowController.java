@@ -6,9 +6,12 @@ import com.eyesfree.weibo.base.R;
 import com.eyesfree.weibo.beans.FansResBean;
 import com.eyesfree.weibo.beans.FollowResBean;
 import com.eyesfree.weibo.entity.Follow;
+import com.eyesfree.weibo.entity.User;
 import com.eyesfree.weibo.service.FollowService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -34,6 +37,9 @@ public class FollowController {
     @ApiOperation("关注列表")
     @GetMapping ("/followList/{userId}")
     public R followList(@PathVariable String userId){
+        Subject subject = SecurityUtils.getSubject();
+        User user = (User)subject.getPrincipal();
+        System.out.println("user: " + user.getUserName() + " " + user.getPassword());
         List<FollowResBean> list = followService.getFollowList(userId);
         return R.ok().put("data", list);
     }
