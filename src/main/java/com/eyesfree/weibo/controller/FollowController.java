@@ -37,9 +37,6 @@ public class FollowController {
     @ApiOperation("关注列表")
     @GetMapping ("/followList/{userId}")
     public R followList(@PathVariable String userId){
-        Subject subject = SecurityUtils.getSubject();
-        User user = (User)subject.getPrincipal();
-        System.out.println("user: " + user.getUserName() + " " + user.getPassword());
         List<FollowResBean> list = followService.getFollowList(userId);
         return R.ok().put("data", list);
     }
