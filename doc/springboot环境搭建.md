@@ -68,3 +68,7 @@
    配置文件中添加日志文件地址配置
        logging:
          config: classpath:log/log-config-dev.xml
+         
+8、添加springboot定时任务
+   添加定时任务类，方法上增加注解 @Scheduled(cron="0 26 09 * * ?")，并让定时任务类纳入spring容器管理
+   启动类增加开启定时任务的注解：@EnableScheduling
