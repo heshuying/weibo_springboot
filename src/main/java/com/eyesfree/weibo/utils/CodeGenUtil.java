@@ -20,4 +20,8 @@ public class CodeGenUtil {
         String result = afterShuffle.substring(0, length);
         return result;
     }
+
+    public static void main(String[] args) {
+        System.out.println(getRandomCode(10));
+    }
 }
