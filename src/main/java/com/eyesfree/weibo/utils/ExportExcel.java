@@ -56,12 +56,10 @@ public class ExportExcel<T> implements Serializable {
 	 *            表格sheet名称
 	 * @param author
 	 *            表格作者
-	 * @param headers
 	 *            表格属性列名数组
 	 * @param dataset
 	 *            需要显示的数据集合,集合中一定要放置符合javabean风格的类的对象。此方法支持的
 	 *            javabean属性的数据类型有基本数据类型及String,Date,byte[](图片数据)
-	 * @param out
 	 *            与输出设备关联的流对象，可以将EXCEL文档导出到本地文件或者网络中
 	 * @param pattern
 	 *            如果有时间数据，设定输出格式。默认为"yyy-MM-dd"
@@ -79,7 +77,6 @@ public class ExportExcel<T> implements Serializable {
 	 *            表格sheet名称
 	 * @param author
 	 *            表格作者
-	 * @param headers
 	 *            表格属性列名数组
 	 * @param dataset
 	 *            需要显示的数据集合,集合中一定要放置符合javabean风格的类的对象。此方法支持的
@@ -292,8 +289,6 @@ public class ExportExcel<T> implements Serializable {
 	 * 输出附件
 	 *
 	 * @param titles
-	 * @param sheetName
-	 * @return
 	 */
 	public static void writeExcelFile(HttpServletResponse response, HSSFWorkbook workbook, String[] titles,
                                       String fileName) {
@@ -327,8 +322,6 @@ public class ExportExcel<T> implements Serializable {
 	 * 输出附件
 	 *
 	 * @param titles
-	 * @param sheetName
-	 * @return
 	 */
 	public static void writeExcelFile(HttpServletRequest request, HttpServletResponse response, HSSFWorkbook workbook,
                                       String[] titles, String fileName) {
