@@ -26,7 +26,7 @@
 
 
     <select id="getUserList" resultMap="BaseResultMap">
-        SELECT * FROM USER;
+        SELECT * FROM `user`;
     </select>
 
 </mapper>

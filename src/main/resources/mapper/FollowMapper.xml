@@ -22,7 +22,7 @@
           u.sex
         FROM
           follow f
-          JOIN USER u
+          JOIN `user` u
             ON f.`user_id_follow` = u.id
         WHERE f.`user_id` = #{userId} and f.status = 0
     </select>
@@ -39,7 +39,7 @@
           u.sex
         FROM
           follow f
-          JOIN USER u
+          JOIN `user` u
             ON f.`user_id` = u.id
         WHERE f.`user_id_follow` = #{userId} and f.status = 0
     </select>
